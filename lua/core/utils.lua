@@ -47,7 +47,7 @@ nvchad.remove_default_keys = function()
    local chadrc = require "custom.chadrc"
 
    local matched_disabled_keys = function(mode, keybind, mode_mapping)
-      local disabled_keys = chadrc.mappings.disabled or {}
+      local disabled_keys = chadrc.mappings and chadrc.mappings.disabled or {}
 
       if vim.tbl_contains(disabled_keys[mode] or {}, keybind) then
          mode_mapping[keybind] = nil
@@ -100,8 +100,6 @@ end
 nvchad.no_WhichKey_map = function(mappings, mapping_opt)
    mappings = mappings or nvchad.load_config().mappings
 
-   local default_opts = mapping_opt or {}
-
    for section, section_mappings in pairs(mappings) do
       -- skip some mappings
       if section == "lspconfig" then
@@ -110,6 +108,9 @@ nvchad.no_WhichKey_map = function(mappings, mapping_opt)
 
       for mode, mode_mappings in pairs(section_mappings) do
          for keybind, mapping_info in pairs(mode_mappings) do
+            -- merge default + user opts
+
+            local default_opts = mapping_opt or {}
             local opts = merge_tb("force", default_opts, mapping_info.opts or {})
 
             if mapping_info.opts then
@@ -119,9 +120,9 @@ nvchad.no_WhichKey_map = function(mappings, mapping_opt)
             vim.keymap.set(mode, keybind, mapping_info[1], opts)
          end
       end
-   end
 
-   ::continue::
+      ::continue::
+   end
 end
 
 -- load plugin after entering vim ui
