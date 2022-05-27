@@ -86,6 +86,10 @@ map('n', '<leader>bp', ':BufferLinePick<CR>', opts)
 map('n', '<leader>bc', ':BufferLinePickClose<CR>', opts)
 map('n', '<leader>ba', ':lua Close_all_but()<CR>', opts)
 
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
 -- Normal --
 
