@@ -88,11 +88,6 @@ map('n', '<leader>ba', ':lua Close_all_but()<CR>', opts)
 
 
 -- Normal --
--- Better window navigation
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
 
 -- use jj to exit insert mode
 map("i", "jj", "<ESC>", opts)
@@ -114,6 +109,7 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 vim.g.camelcasemotion_key = '<leader>'
 
 -- telescope
+map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<leader>r", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>c", "<cmd>Telescope grep_string<cr>", opts)  -- Search string under cursor
 map("n", "<leader>br", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
@@ -138,10 +134,6 @@ map('t', '<ESC>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 
 -- NvimTree
 map('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
-
--- Copilot
-map('n', '<leader>cpe', '<CMD>:Copilot enable<CR>', opts)
-map('n', '<leader>cpd', '<CMD>:Copilot disable<CR>', opts)
 
 --gitsigns
 map('n', '[g', '<CMD>:Gitsigns next_hunk<CR>', opts)
