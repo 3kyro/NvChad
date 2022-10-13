@@ -1,13 +1,12 @@
--- Just an example, supposed to be placed in /lua/custom/
-
-
 -- make sure you maintain the structure of `core/default_config.lua` here,
 -- example of changing theme:
+-- chadrc
 
-
-
+vim.g.camelcasemotion_key = "<Leader>"
 
 local M = {}
+
+M.mappings = require "custom.mappings"
 
 M.options = {
    -- custom = {}
@@ -37,7 +36,13 @@ M.options = {
 ---- UI -----
 
 M.ui = {
-   theme = "onedark",
+  -- hl = highlights
+  hl_add = {},
+  hl_override = {},
+  changed_themes = {},
+  theme_toggle = { "catppuccin_latte", "catppuccin" },
+  theme = "catppuccin_latte", -- default theme
+  transparency = false,
 }
 
 -- Install plugins

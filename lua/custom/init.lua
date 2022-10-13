@@ -55,7 +55,7 @@ vim.g.code_action_menu_show_details = false
 vim.g.code_action_menu_show_diff = true
 
 -- MAPPINGS
-local map = nvchad.map
+local map = require('nvchad').map
 local opts = { noremap = true, silent = true }
 local optsmap = { noremap = false, expr = true, silent = true }
 local term_opts = { silent = true }
@@ -69,6 +69,13 @@ Close_all_but = function ()
    vim.cmd "BufferLineCloseLeft"
    vim.cmd "BufferLineCloseRight"
 end
+
+-------------------------------------------------------------------
+-- Need to do these
+-- Navigater camelcase
+vim.g.camelcasemotion_key = "<Leader>"
+
+-------------------------------------------------------------------
 
 -- Modes
 --   normal_mode = "n",
@@ -109,8 +116,6 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
--- Navigater camelcase
-vim.g.camelcasemotion_key = '<leader>'
 
 -- telescope
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)

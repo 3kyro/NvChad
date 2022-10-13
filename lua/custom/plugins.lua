@@ -30,18 +30,12 @@ return {
 
   [ 'nvim-telescope/telescope-fzf-native.nvim' ] = { run = 'make' },
 
-  ["folke/which-key.nvim"] = {
-     config = function()
-       require("which-key").setup {
-         -- your configuration comes here
-         -- or leave it empty to use the default settings
-         -- refer to the configuration section below
-         plugins = {
-           spelling = {
-             enabled = true,
-           },
-         },
-       }
-     end
-     },
+  -- We are just modifying lspconfig's packer definition table
+  -- Put this in your custom plugins section i.e M.plugins field
+  ["neovim/nvim-lspconfig"] = {
+      config = function()
+        require "plugins.configs.lspconfig"
+        require "custom.lspconfig"
+      end,
+  },
 }
