@@ -40,8 +40,8 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "blossom", "monekai" },
-  theme = "blossom", -- default theme
+  theme_toggle = { "everforest_light", "monekai" },
+  theme = "everforest_light", -- default theme
   transparency = false,
 }
 
