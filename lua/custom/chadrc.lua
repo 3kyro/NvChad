@@ -40,8 +40,8 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "catppuccin_latte", "catppuccin" },
-  theme = "catppuccin_latte", -- default theme
+  theme_toggle = { "blossom", "monekai" },
+  theme = "blossom", -- default theme
   transparency = false,
 }
 
