@@ -180,12 +180,7 @@ M.lspconfig = {
       "lsp implementation",
     },
 
-    ["<leader>ls"] = {
-      function()
-        vim.lsp.buf.signature_help()
-      end,
-      "lsp signature_help",
-    },
+    ["<leader>ls"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols<CR>", "toggle nvimtree" },
 
     ["<leader>D"] = {
       function()
