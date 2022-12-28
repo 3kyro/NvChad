@@ -56,7 +56,14 @@ M.general = {
 
     ["f"] = { "<cmd> Pounce <CR>", "pounce" },
     ["<leader>s"] = { "<cmd> CodeActionMenu <CR>", "code action menu" },
-    ["<leader>ba"] = { ":lua Close_all_but()<CR>", "Close all buffers but the current one" },
+    ["<leader>ba"] = {
+       function()
+         require("nvchad_ui.tabufline").closeOtherBufs()
+       end,
+        "close all but the current buffer",
+    },
+
+
 
     ["<leader>tt"] = {
       function()

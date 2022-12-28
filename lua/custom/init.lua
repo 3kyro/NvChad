@@ -91,7 +91,6 @@ map('n', '<S-h>', ':bp<CR>', opts)
 map('n', '<leader>bc', ':Bdelete<CR>', opts)
 map('n', '<leader>bp', ':BufferLinePick<CR>', opts)
 map('n', '<leader>bc', ':BufferLinePickClose<CR>', opts)
-map('n', '<leader>ba', ':lua Close_all_but()<CR>', opts)
 
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
