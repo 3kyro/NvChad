@@ -41,7 +41,7 @@ M.ui = {
   hl_override = {},
   changed_themes = {},
   theme_toggle = { "everforest_light", "monekai" },
-  theme = "everforest_light", -- default theme
+  theme = "chadtain", -- default theme
   transparency = false,
 }
 
